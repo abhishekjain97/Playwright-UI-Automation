@@ -16,12 +16,15 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
 ---
 
 ## 📌 Project Overview
-The primary objective of this project is to validate the shopping cart functionality of the Automation Exercise website. The automation suite performs actions such as adding products to the cart, updating quantities, and verifying cart total.
+The primary objective of this project is to validate the shopping cart functionality of the Automation Exercise website. The automation suite performs actions such as adding products to the cart, updating quantities, and verifying cart total.
 
 ---
 
 ## 🛠️ Technologies Used
-- **[Microsoft Playwright for .NET](https://playwright.dev/dotnet/)**: For browser automatin.- **[NUnit](https://nunit.org/)**: As the testing framewok.- **.NET 8.0 SDK**: The development platfom.- **C#**: Programming languae.
+- **[Microsoft Playwright for .NET](https://playwright.dev/dotnet/)**: For browser automatin.
+- **[NUnit](https://nunit.org/)**: As the testing framewok.
+- **.NET 8.0 SDK**: The development platfom.
+- **C#**: Programming languae.
 
 ---
 
