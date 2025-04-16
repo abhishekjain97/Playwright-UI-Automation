@@ -12,8 +12,6 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
 - [Running Tests](#running-tests)
 - [Test Scenarios](#test-scenarios)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
