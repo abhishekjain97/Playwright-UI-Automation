@@ -35,7 +35,6 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
    git clone https://github.com/yourusername/PlaywrightTests.git
    cd PlaywrightTests
    ```
-
 
 2. **Install Dependencies**:
 
