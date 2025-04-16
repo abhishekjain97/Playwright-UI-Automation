@@ -23,7 +23,7 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
 ---
 
 ## 🛠️ Technologies Used
-- **[Microsoft Playwright for .NET](https://playwright.dev/dotnet/)**: For browser automatin.- **[NUnit](https://nunit.org/)**: As the testing framewok.- **.NET 8.0 SDK**: The development platfom.- **C#**: Programming languae.
+- **[Microsoft Playwright for .NET](https://playwright.dev/dotnet/)**: For browser automatin.- **[NUnit](https://nunit.org/)**: As the testing framewok.- **.NET 8.0 SDK**: The development platfom.- **C#**: Programming languae.
 
 ---
 
@@ -34,7 +34,7 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
    ```bash
    git clone https://github.com/yourusername/PlaywrightTests.git
    cd PlaywrightTests
-   ``
+   ```
 
 
 2. **Install Dependencies**:
