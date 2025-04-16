@@ -21,7 +21,7 @@ The primary objective of this project is to validate the shopping cart functiona
 ---
 
 ## 🛠️ Technologies Used
-- **[Microsoft Playwright for .NET](https://playwright.dev/dotnet/)**: For browser automatin.
+- **[Microsoft Playwright for .NET](https://playwright.dev/dotnet/)**: For browser automation.
 - **[NUnit](https://nunit.org/)**: As the testing framewok.
 - **.NET 8.0 SDK**: The development platfom.
 - **C#**: Programming languae.
