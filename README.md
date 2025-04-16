@@ -116,4 +116,5 @@ PlaywrightTests/
 ```
 
 - **Pags/**: Contains page object models for differentpages.
-- **Tess/**: Houses the test casses.
+- **Test/**: Houses the test casses.
+- **Utilities/**: Generate rendom data for registration.
