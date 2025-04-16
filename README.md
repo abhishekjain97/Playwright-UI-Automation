@@ -43,15 +43,13 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
 
    ```bash
    dotnet restore
-   ``
-
+   ```
 
 3. **Install Playwright Browsers**:
 
    ```bash
    playwright install
-   ``
-
+   ```
 
 ---
 
@@ -59,48 +57,47 @@ This project is a UI automation suite developed using [Microsoft Playwright](htt
 
 To execute all test:
 
-
 ```bash
 dotnet test
-``
-
+```
 
 To run a specific test cas:
 
-
 ```bash
 dotnet test --filter "Name=Cart_ShouldIncrementQty_WhenSameItemAddedTwice"
-``
-
+```
 
 To run tests with detailed console outpu:
 
-
 ```bash
 dotnet test --logger:"console;verbosity=detailed"
-``
-
+```
 
 ---
 
 ## 🧪 Test Scenaios
 
-The automation suite covers the following scenrios:
+The automation suite covers the following scenrios:
 
 1. **Add Product to Cart**:
-   - Navigate to the productpage.   - Add a product to thecart.   - Verify the quantity is updatedto 1.
+   - Navigate to the productpage.   
+   - Add a product to thecart.   
+   - Verify the quantity is updated to 1.
 
 2. **Update Product Quantity**:
-   - Navigate to the product detailpage.   - Increase the quantityto 2.   - Add to cart and verify the quantity is updated accordngly.
+   - Navigate to the product detailpage.   
+   - Increase the quantity to 2.   
+   - Add to cart and verify the quantity is updated accordngly.
 
 3. **Remove Product from Cart**:
-   - Navigate to the cartpage.   - Remove the product from thecart.   - Verify the cart is mpty.
+   - Navigate to the cartpage.   
+   - Remove the product from thecart.   
+   - Verify the cart is mpty.
 
 ---
 
 ## 📁 Project Struture
 
-
 ```plaintext
 PlaywrightTests/
 ├── Pages/
@@ -117,8 +114,6 @@ PlaywrightTests/
 ├── PlaywrightTests.csproj
 └── README.md
 ```
-
 
-- **Pags/**: Contains page object models for differentpages.
-- **Tess/**: Houses the test casses.
-
+- **Pags/**: Contains page object models for differentpages.
+- **Tess/**: Houses the test casses.
