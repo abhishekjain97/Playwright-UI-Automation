@@ -100,6 +100,8 @@ The automation suite covers the following scenrios:
 
 ```plaintext
 PlaywrightTests/
+├── Api/
+│   └── ApiHelper.cs
 ├── Pages/
 │   └── CartPage.cs
 │   └── ProductsPage.cs
