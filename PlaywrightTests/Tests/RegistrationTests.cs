@@ -17,14 +17,11 @@ namespace PlaywrightTests.Tests
         }
 
         [Test]
-        [TestCase("John Doe", "johndeo@example.com", "12345678")]
-        [TestCase("Zoe Bender", "zoebender@example.com", "12345678")]
-        [TestCase("Sarah Leach", "sarahleach@example.com", "12345678")]
-        public async Task FullUserRegistrationAndDeletionFlow(string name, string email, string password)
+        public async Task FullUserRegistrationAndDeletionFlow()
         {
-            // string name = DataGenerator.GenerateRandomName();
-            // string email = DataGenerator.GenerateRandomEmail();
-            // string password = DataGenerator.GenerateRandomPassword();
+            string name = DataGenerator.GenerateRandomName();
+            string email = DataGenerator.GenerateRandomEmail();
+            string password = DataGenerator.GenerateRandomPassword();
 
             Assert.IsTrue(await _registrationPage.IsHomePageVisibleAsync(), "Home page is not visible.");
 
@@ -42,8 +39,26 @@ namespace PlaywrightTests.Tests
             await _registrationPage.ClickContinueAsync();
             Assert.IsTrue(await _registrationPage.IsLoggedInAsAsync(name), $"'Logged in as {name}' is not visible.");
 
+            // API Verification
+            await VerifyRegistrationData_VerifyLoginAPI(email, password);
+            
+            // UI Deletion Steps
             await _registrationPage.ClickDeleteAccountAsync();
             Assert.IsTrue(await _registrationPage.IsAccountDeletedAsync(), "Account deletion failed.");
+        }
+
+        public async Task VerifyRegistrationData_VerifyLoginAPI(string email, string password)
+        {
+            var apiRequestContext = await _playwright.APIRequest.NewContextAsync();
+            var response = await apiRequestContext.PostAsync("https://automationexercise.com/api/verifyLogin", new APIRequestContextOptions
+            {
+                DataObject = new
+                {
+                    email = email,
+                    password = password
+                }
+            });
+            Assert.That(response.Status, Is.EqualTo(200), $"Expected status code 200 but got a different value.");
         }
 
         [TearDown]
