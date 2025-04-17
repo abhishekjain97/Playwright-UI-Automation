@@ -34,7 +34,7 @@ namespace PlaywrightTests
             var cookieDialog = _page.Locator("div.fc-dialog-container");
             if (await cookieDialog.IsVisibleAsync())
             {
-                var acceptButton = cookieDialog.Locator("button.fc-primary-button");
+                var acceptButton = cookieDialog.Locator("button.fc-button.fc-cta-consent.fc-primary-button");
                 if (await acceptButton.IsVisibleAsync())
                 {
                     await acceptButton.ClickAsync();
