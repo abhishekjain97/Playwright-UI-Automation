@@ -1,8 +1,7 @@
 using Microsoft.Playwright;
-using NUnit.Framework;
 using PlaywrightTests.Pages;
 using PlaywrightTests.Utilities;
-using System.Threading.Tasks;
+using PlaywrightTests.Api;
 
 namespace PlaywrightTests.Tests
 {
@@ -40,7 +39,9 @@ namespace PlaywrightTests.Tests
             Assert.IsTrue(await _registrationPage.IsLoggedInAsAsync(name), $"'Logged in as {name}' is not visible.");
 
             // API Verification
-            await VerifyRegistrationData_VerifyLoginAPI(email, password);
+            var apiContext = await ApiHelper.CreateApiContextAsync(_playwright);
+            var response = await ApiHelper.PostRegistrationVerificationAsync(apiContext, email, password);
+            Assert.That(response.Status, Is.EqualTo(200), "Expected 200 OK from verifyLogin API.");
             
             // UI Deletion Steps
             await _registrationPage.ClickDeleteAccountAsync();
