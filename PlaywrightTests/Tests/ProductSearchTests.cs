@@ -16,13 +16,16 @@ namespace PlaywrightTests.Tests
         }
 
         [Test]
-        public async Task ProductSearchAndFilter_ShouldShowRelevantResults()
+        [TestCase("tshirt")]
+        [TestCase("jeans")]
+        [TestCase("dress")]
+        public async Task ProductSearchAndFilter_ShouldShowRelevantResults(string keyword)
         {
             await _productsPage.NavigateToProductsAsync();
-            await _productsPage.SearchProductAsync("tshirt");
+            await _productsPage.SearchProductAsync(keyword);
 
             Assert.IsTrue(await _productsPage.AreSearchResultsVisibleAsync(), "Search results are not visible.");
-            Assert.IsTrue(await _productsPage.DoResultsContainKeywordAsync("tshirt"), "Search results do not match keyword.");
+            Assert.IsTrue(await _productsPage.DoResultsContainKeywordAsync(keyword), "Search results do not match keyword.");
 
             await _productsPage.ApplyCategoryFilterAsync(); // Simulated category filter
             await _productsPage.ApplyBrandFilterAsync();    // Apply brand filter

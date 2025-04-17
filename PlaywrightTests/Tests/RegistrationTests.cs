@@ -17,11 +17,14 @@ namespace PlaywrightTests.Tests
         }
 
         [Test]
-        public async Task FullUserRegistrationAndDeletionFlow()
+        [TestCase("John Doe", "johndeo@example.com", "12345678")]
+        [TestCase("Zoe Bender", "zoebender@example.com", "12345678")]
+        [TestCase("Sarah Leach", "sarahleach@example.com", "12345678")]
+        public async Task FullUserRegistrationAndDeletionFlow(string name, string email, string password)
         {
-            string name = DataGenerator.GenerateRandomName();
-            string email = DataGenerator.GenerateRandomEmail();
-            string password = DataGenerator.GenerateRandomPassword();
+            // string name = DataGenerator.GenerateRandomName();
+            // string email = DataGenerator.GenerateRandomEmail();
+            // string password = DataGenerator.GenerateRandomPassword();
 
             Assert.IsTrue(await _registrationPage.IsHomePageVisibleAsync(), "Home page is not visible.");
 

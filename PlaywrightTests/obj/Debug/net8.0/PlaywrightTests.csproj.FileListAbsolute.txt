@@ -436,3 +436,4 @@ D:\London\Playwright UI Automation Technical Assessment\PlaywrightTests\obj\Debu
 D:\London\Playwright UI Automation Technical Assessment\PlaywrightTests\obj\Debug\net8.0\PlaywrightTests.pdb
 D:\London\Playwright UI Automation Technical Assessment\PlaywrightTests\obj\Debug\net8.0\PlaywrightTests.genruntimeconfig.cache
 D:\London\Playwright UI Automation Technical Assessment\PlaywrightTests\obj\Debug\net8.0\ref\PlaywrightTests.dll
+D:\London\Playwright UI Automation Technical Assessment\PlaywrightTests\obj\Debug\net8.0\PlaywrightTests.sourcelink.json

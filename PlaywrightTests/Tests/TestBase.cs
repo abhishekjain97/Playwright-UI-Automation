@@ -19,6 +19,9 @@ namespace PlaywrightTests
             _context = await _browser.NewContextAsync();
             _page = await _context.NewPageAsync();
             await _page.GotoAsync("https://automationexercise.com");
+
+            // Accept cookies if the dialog appears
+            await AcceptCookiesAsync();
         }
 
         [TearDown]
@@ -26,6 +29,19 @@ namespace PlaywrightTests
         {
             await _browser.CloseAsync();
             _playwright.Dispose();
+        }
+
+        private async Task AcceptCookiesAsync()
+        {
+            var cookieDialog = _page.Locator("div.fc-dialog-container");
+            if (await cookieDialog.IsVisibleAsync())
+            {
+                var acceptButton = cookieDialog.Locator("button.fc-primary-button");
+                if (await acceptButton.IsVisibleAsync())
+                {
+                    await acceptButton.ClickAsync();
+                }
+            }
         }
     }
 }
