@@ -48,20 +48,6 @@ namespace PlaywrightTests.Tests
             Assert.IsTrue(await _registrationPage.IsAccountDeletedAsync(), "Account deletion failed.");
         }
 
-        public async Task VerifyRegistrationData_VerifyLoginAPI(string email, string password)
-        {
-            var apiRequestContext = await _playwright.APIRequest.NewContextAsync();
-            var response = await apiRequestContext.PostAsync("https://automationexercise.com/api/verifyLogin", new APIRequestContextOptions
-            {
-                DataObject = new
-                {
-                    email = email,
-                    password = password
-                }
-            });
-            Assert.That(response.Status, Is.EqualTo(200), $"Expected status code 200 but got a different value.");
-        }
-
         [TearDown]
         public async Task Teardown()
         {
